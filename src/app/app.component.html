@@ -1,0 +1,32 @@
+<ion-app>
+  <ion-split-pane>
+    <ion-menu>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title color="light">Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-icon color="light" slot="start" [name]="p.icon"></ion-icon>
+              <ion-label color="light">
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+      <ion-footer>
+          <div style="float:left">&nbsp;
+          <img style="margin:3px" width="30px" height="50px" src="https://raw.githubusercontent.com/umss/logos/master/umss/png/x1024.png">
+          </div>
+          <div>
+            <h6 style="color:white">Universidad Mayor de San Simon</h6>
+          </div>
+      </ion-footer>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="light">
+      Regresion Potencial
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  <ion-card>
+    <ion-card-content>
+      <br>
+      <h1>INGRESAR DATOS</h1> 
+      <form (ngSubmit)="addInterval()">
+        <ion-item>
+          <ion-label color="light">X</ion-label>
+          <ion-input color="light" type="number" [(ngModel)]="newInterval.x" name="x"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="light">Y</ion-label>
+          <ion-input color="light" type="number" [(ngModel)]="newInterval.y" name="y"></ion-input>
+        </ion-item><br>
+        <ion-button type="submit" expand="block">Ingresar</ion-button>
+      </form>
+      <div class="chips">
+        <ion-chip color="secondary" *ngFor="let interval of intervals" value="interval" (click)="removeInterval(interval)">
+          <ion-label color="light">{{interval.x}} | {{interval.y}}</ion-label>
+            <ion-icon name="close" ></ion-icon>
+      </ion-chip>
+      </div><br>
+      <div *ngIf="result">
+          <h1>RESULTADOS</h1><br>
+          <h2>A = {{result.a}} +- {{result.errorA}}</h2>
+          <h2>B = {{result.b}} +- {{result.errorB}}</h2>
+          <h2>a = {{result.lowerA}} +- {{result.errorLowerA}}</h2>
+          <h2>b = {{result.lowerB}} +- {{result.errorLowerB}}</h2>
+          <h2>Delta = {{result.delta}}</h2>
+          <h2>Discrepancia al cuadrado = {{result.discrepanciaCuadrada}}</h2>
+          <h2>Sigma al cuadrado = {{result.sigmaCuadrada}}</h2>
+          <h2>Coeficiente de correlacion = {{result.coeficienteCorrelacion}}</h2>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

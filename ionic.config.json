@@ -1,0 +1,8 @@
+{
+  "name": "fisica",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "8e7df05c"
+}
