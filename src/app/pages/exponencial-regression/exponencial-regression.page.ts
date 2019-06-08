@@ -51,7 +51,17 @@ export class ExponencialRegressionPage {
     
     this.result.lowerA = Math.exp(this.result.a);
     this.result.lowerB = this.result.b;
-   
-  }
+    this.result.delta = (n * sumXX) - (sumX * sumX);
+    this.result.discrepanciaCuadrada = (sumYY - (2 * this.result.lowerA * sumY) - (2 * this.result.b * sumXY) +
+    (n * (this.result.lowerA * this.result.lowerA)) + (2 * this.result.lowerA * this.result.b * sumX) + ((this.result.b * this.result.b) * sumXX));
+    this.result.sigmaCuadrada = this.result.discrepanciaCuadrada / (n - 2);
+    this.result.sigmaCuadrada = this.result.discrepanciaCuadrada / (n - 2);
+    this.result.errorA = Math.sqrt((this.result.sigmaCuadrada * sumXX) / this.result.delta);
+    this.result.errorB = Math.sqrt((this.result.sigmaCuadrada * n) / this.result.delta);
+    this.result.coeficienteCorrelacion = (((n * sumXY) - (sumX * sumY)) / Math.sqrt(((n * sumXX) - (sumX * sumX)) *
+    ((n * sumYY) - (sumY * sumY))));
+    this.result.errorLowerA = Math.pow(10, this.result.lowerA) * Math.LN10 * this.result.errorA;
+    this.result.errorLowerB = this.result.errorB;
 
+  }
 }

@@ -33,10 +33,14 @@
       </div><br>
       <div *ngIf="result">
           <h1>RESULTADOS</h1><br>
-          <h2>A = {{result.a}}</h2>
-          <h2>B = {{result.b}}</h2>
+          <h2>A = {{result.a}} +- {{result.errorA}}</h2>
+          <h2>B = {{result.b}} +- {{result.errorB}}</h2>
           <h2>a = {{result.lowerA}}</h2>
           <h2>b = {{result.lowerB}}</h2>
+          <h2>Delta = {{result.delta}}</h2>
+          <h2>Discrepancia al cuadrado = {{result.discrepanciaCuadrada}}</h2>
+          <h2>Sigma al cuadrado = {{result.sigmaCuadrada}}</h2>
+          <h2>Coeficiente de correlacion = {{result.coeficienteCorrelacion}}</h2>
           <h2>Modelo = {{result.a}}*e<sup>{{result.b}}x</sup></h2>
       </div>
     </ion-card-content>
