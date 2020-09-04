@@ -29,7 +29,7 @@
     "cordova-android": "8.0.0",
     "cordova-ios": "5.0.1",
     "core-js": "^2.5.4",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "now": "^15.2.0",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
